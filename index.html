@@ -10,17 +10,14 @@
 
   <body>
     <div class="container">
-      <div>测试在UC浏览器发起请求的referer，反馈问题用</div>
-      <br>
       <div id="client"></div>
-      <br>
 
       <qa-router-button
         data-package-name="com.sina.weibo.quickapp"
         data-page="/"
         data-params="{}"
         data-design-params='{"fontSize": 16,"designWidth": 1080}'
-        style="height: 123px"
+        style="height: 61px"
       >
         <templates style="display:none">
           <div id="container">
@@ -28,7 +25,7 @@
           </div>
         </templates>
         <!-- prettier-ignore -->
-        <styles>
+        <styles style="display:none">
           #container {
             display: flex;
             flex-direction: column;
@@ -47,6 +44,31 @@
         </styles>
       </qa-router-button>
     </div>
+    <span>说明：</span>
+    <br>
+    <span>1. 上面淡蓝色按钮是一个iframe，通过https加载。</span>
+    <br>
+    <br>
+    <span>2. 点击上述按钮后会发起请求：</span>
+    <br>
+    <span>安卓9及以下：http://www.rpkkuai.com/?i=com.sina.weibo.quickapp&p=/&random=......</span>
+    <br>
+    <br>
+    <span>安卓10及以上：http://qallzmx.quicklyopen.com/?i=com.sina.weibo.quickapp&p=/&random=......</span>
+    <br>
+    <br>
+    <span>3. iframe内通过  &lt;meta name="referrer" content="unsafe-url"&gt; 设置了整个页面unsafe-url的referer-policy策略。</span><br>
+    <br>
+    <br>
+    <span>预期现象：上述http请求请求头中有referer</span>
+    <br>
+    <br>
+    <span>实际现象：上述http请求请求头中无referer</span>
+    <br>
+    <br>
+    <span>测试环境：UC浏览器 V15.3.4.1224</span>
+    <br>
+    <span>vivo 任意手机，大于安卓8版本</span>
     <script>
       document.getElementById('client').innerHTML = 'User-agent: ' + navigator.userAgent.toLowerCase()
     </script>
