@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title>测试在支付宝webview发起快应用http请求</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="client"></div>
+      <br />
+      <br />
+      <button id="btn">点击发起快应用http请求</button>
+    </div>
+    <br />
+    <br />
+    <span>说明：</span>
+    <br />
+    <br />
+    <span>点击上述按钮后会发起请求：</span>
+    <br />
+    <br />
+    <span
+      >http://qallzmx.quicklyopen.com/?i=com.sina.weibo.quickapp&p=/&random=......</span
+    >
+    <br />
+    <br />
+    <span>现象：点击一次发起上述请求后，该请求持续循环发起</span>
+    <br />
+    <br />
+    <span>测试环境：支付宝 10.3.66</span>
+    <br />
+    <span>vivo 任意手机，大于等于安卓10版本</span>
+    <script>
+      document.getElementById('client').innerHTML =
+        'User-agent: ' + navigator.userAgent.toLowerCase()
+      document.getElementById('btn').addEventListener('click', function(e) {
+        const img = document.createElement('img')
+        img.src = 'http://qallzmx.quicklyopen.com/?i=com.sina.weibo.quickapp&p=/&random=8345728937'
+      })
+    </script>
+  </body>
+</html>
