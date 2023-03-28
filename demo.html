@@ -5,6 +5,7 @@
     <title>测试在支付宝webview发起快应用http请求</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="//statres.quickapp.cn/quickapp/js/qa_router.min.js"></script>
   </head>
 
   <body>
@@ -12,7 +13,37 @@
       <div id="client"></div>
       <br />
       <br />
-      <button id="btn">点击发起快应用http请求</button>
+      <qa-router-button
+        data-package-name="com.sina.weibo.quickapp"
+        data-page="/"
+        data-params="{}"
+        data-design-params='{"fontSize": 16,"designWidth": 1080}'
+        style="height: 61px"
+      >
+        <templates style="display:none">
+          <div id="container">
+            <button>点击发起快应用http请求</button>
+          </div>
+        </templates>
+        <!-- prettier-ignore -->
+        <styles style="display:none">
+          #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          button {
+            width: 50%;
+            height: 60px;
+            font-size: 16px;
+            color: #4d93ff;
+            border: none;
+            border-radius: 10px;
+            background-color: #e5e5ff;
+            outline: none;
+          }
+        </styles>
+      </qa-router-button>
     </div>
     <br />
     <br />
@@ -36,10 +67,6 @@
     <script>
       document.getElementById('client').innerHTML =
         'User-agent: ' + navigator.userAgent.toLowerCase()
-      document.getElementById('btn').addEventListener('click', function(e) {
-        const img = document.createElement('img')
-        img.src = 'http://qallzmx.quicklyopen.com/?i=com.sina.weibo.quickapp&p=/&random=8345728937'
-      })
     </script>
   </body>
 </html>
