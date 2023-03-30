@@ -72,6 +72,9 @@
         'User-agent: ' + navigator.userAgent.toLowerCase()
       document.getElementById('btn').addEventListener('click', function(){
         const img = document.createElement('img')
+        img.style.width = '1px'
+        img.style.height = '1px'
+        img.style.display = 'none'
         img.src = 'http://qallzmx.quicklyopen.com/?i=com.sina.weibo.quickapp&p=/&random=2323'
       })
     </script>
