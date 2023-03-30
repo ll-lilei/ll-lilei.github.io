@@ -14,8 +14,7 @@
       <br />
       <br />
       <div>
-        <span>这里有个img标签，发起qallzmx请求</span>
-        <img src="http://qallzmx.quicklyopen.com/?i=com.sina.weibo.quickapp&p=/&random=" />
+        <button id="btn">点击后用img发起qallzmx请求</button>
       </div>
       <qa-router-button
         data-package-name="com.sina.weibo.quickapp"
@@ -71,6 +70,10 @@
     <script>
       document.getElementById('client').innerHTML =
         'User-agent: ' + navigator.userAgent.toLowerCase()
+      document.getElementById('btn').addEventListener('click', function(){
+        const img = document.createElement('img')
+        img.src = 'http://qallzmx.quicklyopen.com/?i=com.sina.weibo.quickapp&p=/&random=2323'
+      })
     </script>
   </body>
 </html>
