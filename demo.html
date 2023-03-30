@@ -5,7 +5,7 @@
     <title>测试在支付宝webview发起快应用http请求</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="//statres.quickapp.cn/quickapp/js/qa_router.min.js"></script>
+    <script src="https://statres.quickapp.cn/quickapp/js/qa_router.min.js"></script>
   </head>
 
   <body>
@@ -13,6 +13,10 @@
       <div id="client"></div>
       <br />
       <br />
+      <div>
+        <span>这里有个img标签，发起qallzmx请求</span>
+        <img src="http://qallzmx.quicklyopen.com/?i=com.sina.weibo.quickapp&p=/&random=" />
+      </div>
       <qa-router-button
         data-package-name="com.sina.weibo.quickapp"
         data-page="/"
